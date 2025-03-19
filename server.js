@@ -6,10 +6,9 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
-
 const authController = require('./controllers/auth.js');
 
-const port = process.env.PORT ? process.env.PORT : '3000';
+const port = process.env.PORT ? process.env.PORT : '3006';
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -19,7 +18,7 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -34,13 +33,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/vip-lounge', (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome to the party ${req.session.user.username}.`);
-  } else {
-    res.send('Sorry, no guests allowed.');
-  }
-});
 
 app.use('/auth', authController);
 
