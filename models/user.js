@@ -9,7 +9,7 @@ const habitSchema = new mongoose.Schema({
     type: String, 
     enum: ['done', 'incomplete'],
     required: true,
-  }
+  },
   notes: {
     type: String,
   }

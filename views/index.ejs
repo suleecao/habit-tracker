@@ -7,12 +7,13 @@
 </head>
 <body>
   <% if (user) { %>
-    <h1>Welcome to the app, <%= user.username %>!</h1>
+    <h1>Welcome to Bloom, <%= user.username %>!</h1>
     <p>
       <a href="/auth/sign-out">Sign out</a>
     </p>
   <% } else { %>
     <h1>Welcome to Bloom</h1>
+    <p>Your Healthy Habit tracker</p>
     <p>
       <a href="/auth/sign-up">Sign up</a> or
       <a href="/auth/sign-in">Sign in</a>.
