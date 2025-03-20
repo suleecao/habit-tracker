@@ -2,8 +2,14 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 
-const User = require('../models/user.js');
 
-const habitsController = require('')
+router.get('/', async (req, res) => {
+    try {
+        res.render('habits/index.ejs');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
 module.exports = router;

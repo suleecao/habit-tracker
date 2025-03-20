@@ -6,6 +6,7 @@
   <title>Bloom</title>
 </head>
 <body>
+  <%- include('./partials/_navbar.ejs') %>
   <% if (user) { %>
     <h1>Welcome to Bloom, <%= user.username %>!</h1>
     <p>
@@ -14,10 +15,6 @@
   <% } else { %>
     <h1>Welcome to Bloom</h1>
     <p>Your Healthy Habit tracker</p>
-    <p>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p>
   <% } %>
 </body>
 </html>
