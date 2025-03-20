@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Morning Habit</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a new AM habit</h1>
+    <form action="/users/<%= user._id %>/habits" method="post">
+        <label for="habit">Habit:</label>
+        <input type="text" name="habit" id="habit" />
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="done">I did this today</option>
+            <option value="incomplete">I did not do this today</option>
+        </select>
+
+        <label for="notes">Thoughts:</label>
+        <!--TODO add cols or rows to textarea to size them-->
+        <textarea name="notes" id="notes"></textarea>
+
+        <button type="submit">Add AM habit</button>
+    </form>
+</body>
+</html>

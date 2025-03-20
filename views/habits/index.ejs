@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Habits</title>
+    <title>Your Healthy Habits</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Your AM Habits</h1>
-    <h1>Your PM Habits</h1>
+    <h1>Your Healthy Habits</h1>
+    <a href="/users/<%= user._id %>/habits/newAM">Add new morning habit</a>
+    <ul>
+        <% habits.forEach(habit => { %>
+        <li>
+            <%= habit.habit %>
+        </li>
+    <% }); %>
+    </ul>
+    <a href="/users/<%= user._id %>/habits/newPM">Add new evening habit</a>
 </body>
 </html>
