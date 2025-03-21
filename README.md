@@ -1,8 +1,8 @@
 ## Healthy Habits Tracker
 
-![game screenshot]
+![homescreen screenshot](images/Bloom-landing-page.png)
 
-[Github deployment]
+[Github deployment] (https://github.com/suleecao/habit-tracker)
 
 * This application lets users sign up or log in to keep track of habits. The habits themselves are split into AM and PM. Users can select whether they did or did not complete a habit for a particular day.
 
