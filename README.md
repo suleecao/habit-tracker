@@ -4,6 +4,8 @@
 
 [Github deployment] (https://github.com/suleecao/habit-tracker)
 
+[Heroku deployment] (https://habit-tracker1-b12e194a44d8.herokuapp.com)
+
 * This application lets users sign up or log in to keep track of habits. The habits themselves are split into AM and PM. Users can select whether they did or did not complete a habit for a particular day.
 
 * Users can also edit or delete a habit, which would delete the name, status, and notes from MongoDB as well.
