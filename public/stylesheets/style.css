@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 .index-body {
-    background-color: red !important;
     background-image: url('https://images.squarespace-cdn.com/content/v1/60ba36dc6a22887310108679/26bd09c0-c2e9-4ff0-a4dc-05dc6fdb8073/dandelion.jpg');
     font-family: "Libre Baskerville";
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 77%;
     background-position: center;
     min-height: 100vh;
     width: 100vw;
@@ -14,9 +13,10 @@
   
   .main-header {
     font-weight: bold;
-    color: white;
-    font-size: 5.6em;
-    margin: -160px 20px 0 20px;
+    color: black;
+    font-size: 1.6 em;
+    margin: 20px;
+    text-align: center;
   }
   
   .footer {
@@ -27,6 +27,7 @@
     font-size: 1.4em;
     position: fixed;
     text-align: center;
+    color: black;
   }
   
   .index-container {
@@ -76,3 +77,31 @@
     background-color: #ffffff;
   }
   
+  .AM-body {
+    background-image: url('https://i.pinimg.com/736x/e4/7c/be/e47cbedafe13f5d971d74f16617c49b8.jpg');
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: 5% -50%;
+  }
+  
+  .PM-body {
+    background-image: url('https://thejewelryloupe.com/wp-content/uploads/Lilac-Brooches-2001-2_JAR-copy-2.jpg');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: 5% -60%;
+  }
+
+  .index-body2 {
+    background-image: url('https://iconicimagesgallery.com/cdn/shop/products/NP_FA_JH012.jpg?v=1668165239');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: 90% 30%;
+
+  }
+
+  .signin {
+    background-image: url('https://www.christies.com/img/LotImages/2024/GNV/2024_GNV_23039_0011_001(rare_rene_boivin_multi-gem_lion_couche_shoulder_brooch085631).jpg?mode=max');
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 70% 10%;
+  }

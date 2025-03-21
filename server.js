@@ -28,7 +28,7 @@ app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 
 //adds middleware for CSS rule 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 app.use(
   session({

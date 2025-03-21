@@ -8,7 +8,7 @@
 
 * Users can also edit or delete a habit, which would delete the name, status, and notes from MongoDB as well.
 
-* The app was built on top of a MEN stack template to make sign in and sign on secure. It also uses EJS, JavaScript, and CSS.
+* The app was built on top of a MEN stack template to make sign in and sign on secure. It also uses node, EJS, JavaScript, and CSS.
 
 **Strech Goal**
 I would like to implement a calendar feature that would let users keep track of streaks for their healthy habits, as that is encouraging for them. 
