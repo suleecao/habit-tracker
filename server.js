@@ -14,8 +14,8 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const habitsController = require('./controllers/habits.js');
 
-const port = process.env.PORT ? process.env.PORT : '3006';
-//const path = require('path');  for CSS later
+const port = process.env.PORT ? process.env.PORT : '3007';
+const path = require('path');  //for CSS 
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -27,8 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 
-//adds middleware for CSS rule TODO
-//app.use(express.static(path.join(__dirname, 'public')));
+//adds middleware for CSS rule 
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
   session({
@@ -52,16 +52,8 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 
 
-
 app.use('/users/:userId/habits', habitsController);
 
-//changd 2:33
-// app.use('/users/:userId/habits', (req, res, next) => {
-//   if (req.params.userId !== req.session.user?._id?.toString()) { 
-//       return res.status(403).send('Forbidden'); 
-//   }
-//   next(); 
-// }, habitsController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

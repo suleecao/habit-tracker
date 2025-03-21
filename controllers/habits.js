@@ -69,14 +69,29 @@ router.get('/:habitId/edit', async (req, res) => {
     }
   });
   
+  //showing updated edited habits
+  router.put('/:habitId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const habit = currentUser.habits.id(req.params.habitId);
+        habit.set(req.body);
+        await currentUser.save();
+        res.redirect(
+            `/users/${currentUser._id}/habits/${req.params.habitId}`
+        );
+    } catch (error) {
+        console.log(error)
+        res.redirect('/');
+    }
+  });
 
 //delete route
 router.delete('/:habitId', async (req, res) => {
     try {
       const currentUser = await User.findById(req.session.user._id);
-      currentUser.habitss.id(req.params.habitId).deleteOne();
+      currentUser.habits.id(req.params.habitId).deleteOne();
       await currentUser.save();
-      res.redirect(`/users/${currentUser._id}/habitss`);
+      res.redirect(`/users/${currentUser._id}/habits`);
     } catch (error) {
       console.log(error);
       res.redirect('/');

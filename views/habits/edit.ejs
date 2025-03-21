@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Editing <%= habit.title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="edit-body">
+  <h1>Edit <%= habit.title %>
+  <form
+    action="/users/<%= user._id %>/habits/<%= habit._id %>?_method=PUT"
+    method="POST">
+    <label for="habit">Habit:</label>
+        <input type="text" name="habit" value="<%=habit.habit%>">
+
+    <label for="notes">Thoughts:</label>
+    <textarea name="notes" id="notes"><%= habit.notes %></textarea>
+
+    <label for="status">Status:</label>
+    <select id="status" name="status" required>
+        <option value="done" <%= habit.status === 'done' ? 'selected' : '' %>>I did this today</option>
+        <option value="incomplete" <%= habit.status === 'incomplete' ? 'selected' : '' %>>I did not do this today</option>
+    </select>
+      
+       
+    </select>
+    <button type="submit">Update Habits</button>
+  </form>
+</div>
+</body>
+</html>
+
+
+    
+    
