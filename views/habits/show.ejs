@@ -1,0 +1,48 @@
+<!-- views/habits/showAM.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>
+    <%= habit.habit %>
+  </title>
+</head>
+
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+    <div class="show-body">
+      <div class="show-header">
+        <h1>
+          <%= habit.habit %> 
+        </h1>
+        <div class="show-sidebar">
+          <div class="show-actions">
+            <a href="/users/<%= user._id %>/habits/<%= habit._id %>/edit">
+              <button type="submit">Edit Habit</button>
+            </a>
+            <form action="/users/<%= user._id %>/habits/<%= habit._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete Habit</button>
+            </form>
+          </div>
+          <p>Current Status: <%= habit.status %>
+          </p>
+        </div>
+      </div>
+      <div class="show-notes-container">
+            <% if (habit.notes) { %>
+              <div class="show-notes">
+                <h2>Notes:</h2>
+                <p>
+                  <%= habit.notes %>
+                </p>
+              </div>
+              <% } %>
+      </div>
+    </div>
+</body>
+
+</html>

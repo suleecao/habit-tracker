@@ -1,15 +1,21 @@
 const mongoose = require('mongoose');
 
 const habitSchema = new mongoose.Schema({
-  habit : {
-    type: String, 
+  habit: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    enum: ['AM', 'PM'],
     required: true,
   },
   status: {
-    type: String, 
+    type: String,
     enum: ['done', 'incomplete'],
     required: true,
   },
+
   notes: {
     type: String,
   }

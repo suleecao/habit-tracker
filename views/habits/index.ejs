@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Healthy Habits</title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Your Healthy Habits</h1>
-    <a href="/users/<%= user._id %>/habits/newAM">Add new morning habit</a>
-    <ul>
-        <% habits.forEach(habit => { %>
-        <li>
-            <%= habit.habit %>
-        </li>
-    <% }); %>
-    </ul>
-    <a href="/users/<%= user._id %>/habits/newPM">Add new evening habit</a>
+        <h1>Your Healthy Habits</h1>
+
+        <h2>Morning Habits</h2>
+        <a href="/users/<%= user._id %>/habits/newAM">Add new morning habit</a>
+        <ul>
+            <% habits.filter(habit=> habit.type === 'AM').forEach((habit)=>{ %>
+                <li>
+                    <a href="/users/<%= user._id %>/habits/<%= habit._id %>" >
+                    <%= habit.habit%> &nbsp     Status: <%=habit.status%></a>
+                </li>
+                <% }); %>
+        </ul>
+
+        <h2>Evening Habits</h2>
+        <a href="/users/<%= user._id %>/habits/newPM">Add new evening habit</a>
+        <ul>
+            <% habits.filter(habit=> habit.type === 'PM').forEach((habit) => { %>
+                <li>
+                    <a href="/users/<%= user._id %>/habits/<%= habit._id %>" >
+                    <%= habit.habit %> &nbsp     Status: <%= habit.status %></a>
+                </li>
+                <% }); %>
+        </ul>
 </body>
+
 </html>
+

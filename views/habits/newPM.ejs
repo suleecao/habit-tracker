@@ -8,21 +8,22 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a new PM habit</h1>
-    <form action="/users/<%= user._id %>/habits" method="post">
+    <form action="/users/<%= user._id %>/habits" method="POST">
+        <input type="hidden" name="type" value="PM">
         <label for="habit">Habit:</label>
-        <input type="text" name="habit" id="habit" />
-
+        <input type="text" name="habit" id="habit" required />
+    
         <label for="status">Status:</label>
-        <select id="status" name="status">
+        <select id="status" name="status" required>
             <option value="done">I did this today</option>
             <option value="incomplete">I did not do this today</option>
         </select>
-
+    
         <label for="notes">Thoughts:</label>
-        <!--TODO add cols or rows to textarea to size them-->
         <textarea name="notes" id="notes"></textarea>
-
+    
         <button type="submit">Add PM habit</button>
     </form>
+    
 </body>
 </html>
